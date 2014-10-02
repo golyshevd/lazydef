@@ -24,8 +24,15 @@ function lazyDef(obj, prop, getter) {
 
             return value;
         },
+        set: function (value) {
+            getter = function () {
+                return value;
+            };
+        },
         configurable: true
     });
+
+    return obj;
 }
 
 module.exports = lazyDef;
