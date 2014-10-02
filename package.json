@@ -8,6 +8,11 @@
     "contributors": [
         "Golyshev Dmitrii <golyshev.dmitry@yandex.ru>"
     ],
+    "keywords": [
+        "getter",
+        "lazy",
+        "define"
+    ],
     "description": "Lazy getters helper",
     "dependencies": {},
     "devDependencies": {
