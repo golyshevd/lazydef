@@ -9,23 +9,40 @@ describe('lazydef', function () {
         var obj = {};
         var spy = [];
 
-        lazyDef(obj, 'foo_bar', function () {
+        lazyDef(obj, 'fooBar', function () {
             spy.push(1);
 
             return 42;
         });
 
-        assert.strictEqual(obj.foo_bar, 42);
-        assert.strictEqual(obj.foo_bar, 42);
-        assert.strictEqual(obj.foo_bar, 42);
+        assert.strictEqual(obj.fooBar, 42);
+        assert.strictEqual(obj.fooBar, 42);
+        assert.strictEqual(obj.fooBar, 42);
         assert.deepEqual(spy, [1]);
 
         setTimeout(function () {
-            assert.strictEqual(obj.foo_bar, 42);
-            assert.strictEqual(obj.foo_bar, 42);
-            assert.strictEqual(obj.foo_bar, 42);
+            assert.strictEqual(obj.fooBar, 42);
+            assert.strictEqual(obj.fooBar, 42);
+            assert.strictEqual(obj.fooBar, 42);
             assert.deepEqual(spy, [1]);
             done();
         }, 50);
+    });
+
+    it('Should allow property setting', function () {
+        var obj = {};
+        lazyDef(obj, 'fooBar', function () {
+            return 42;
+        });
+
+        obj.fooBar = 43;
+        assert.strictEqual(obj.fooBar, 43);
+    });
+
+    it('lazyDef() should return target object', function () {
+        var obj = {};
+        assert.strictEqual(lazyDef(obj, 'fooBar', function () {
+            return 42;
+        }), obj);
     });
 });
