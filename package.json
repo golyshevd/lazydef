@@ -1,0 +1,35 @@
+{
+    "name": "lazydef",
+    "version": "0.0.0",
+    "author": "Golyshev Dmitrii <golyshev.dmitry@yandex.ru>",
+    "bugs": {
+        "url": "https://github.com/golyshevd/lazydef/issues"
+    },
+    "contributors": [
+        "Golyshev Dmitrii <golyshev.dmitry@yandex.ru>"
+    ],
+    "description": "Lazy getters helper",
+    "dependencies": {},
+    "devDependencies": {
+        "gulp": "3.8.8",
+        "lodash-node": "2.4.1",
+        "eslint": "0.8.2",
+        "glob": "4.0.6",
+        "gulp-util": "3.0.1",
+        "minimatch": "1.0.0",
+        "vow": "0.4.5",
+        "vow-fs": "0.3.2",
+        "gulp-mocha": "1.1.0",
+        "gulp-istanbul": "0.3.1",
+        "gulp-jscs": "1.1.2"
+    },
+    "license": "MIT",
+    "main": "lazydef",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/golyshevd/lazydef.git"
+    },
+    "engines": {
+        "node": ">= 0.10.0"
+    }
+}

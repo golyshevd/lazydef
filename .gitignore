@@ -1,0 +1,13 @@
+/.enb/tmp
+/coverage
+**/*.i18n/**
+/bundles/*/*
+!/bundles/*/blocks/
+/bundles/*/*.bemdecl.js
+!/bundles/*/*.server.bemdecl.js
+/vendors
+node_modules
+!/.enb/node_modules
+.DS_Store
+*.log
+.idea
