@@ -45,4 +45,34 @@ describe('lazydef', function () {
             return 42;
         }), obj);
     });
+
+    it('Should be enumerable', function () {
+        var obj = {};
+        var spy = [];
+        var k;
+        lazyDef(obj, 'test', function () {
+            return 42;
+        });
+
+        for (k in obj) {
+            if (obj.hasOwnProperty(k)) {
+                spy.push([k, obj[k]]);
+            }
+        }
+
+        assert.deepEqual(spy, [['test', 42]]);
+    });
+
+    it('Should allow redefining', function () {
+        var obj = {};
+        lazyDef(obj, 'test', function () {
+            return 42;
+        });
+
+        lazyDef(obj, 'test', function () {
+            return 43;
+        });
+
+        assert.strictEqual(obj.test, 43);
+    });
 });
