@@ -29,6 +29,7 @@ function lazyDef(obj, prop, getter) {
                 return value;
             };
         },
+        enumerable: true,
         configurable: true
     });
 
